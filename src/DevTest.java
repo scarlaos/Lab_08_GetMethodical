@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class DevTest
 {
     /* program 1
@@ -65,100 +63,128 @@ public class DevTest
         }
     */
 
+    /*
     public static double getRangedDouble(Scanner in, String prompt, double low, double high)
-    {
-        double doubleVal = 0;
-        boolean validInput = false;
-        do{
-            System.out.print(prompt + "[ " + low + " - " + high + " ]: ");
-            if(in.hasNextDouble())
-            {
-                doubleVal = in.nextDouble();
-                in.nextLine();
-                if(doubleVal >= low && doubleVal <= high)
-                {
-                    validInput = true;
-                } else {
-                    System.out.println("This number is out of the range, [ " + low + " - " + high + " ], you entered: " + doubleVal);
-                }
-            }
-        }while(!validInput);
-        return doubleVal;
-
-    }
-
-    public static boolean getYN(Scanner in, String prompt)
-    {
-        String respondYN = "";
-        boolean returnVal = false;
-        boolean validInput = false;
-
-        do {
-            System.out.println(prompt + ": ");
-            respondYN = in.nextLine();
-
-            if(respondYN.equalsIgnoreCase("Y"))
-            {
-                returnVal = true;
-                validInput = true;
-            }
-            else if(respondYN.equalsIgnoreCase("N"))
-            {
-                returnVal = false;
-                validInput = true;
-            }else {
-                System.out.println("You must enter Y/N. ");
-            }
-
-        }while(!validInput);
-        return returnVal;
-    }
-
-
-    public static String getRegExString(Scanner pipe, String prompt, String regExPattern)
-    {
-        String value = "";
-        boolean gotAValue = false;
-
-        do
         {
-            // show the prompt
-            System.out.print(prompt + ": ");
-            // input the data
-            value = pipe.nextLine();
-            // test to see if it is correct
-            if(value.matches(regExPattern))
-            {
-                // We have a match this String passes!
-                gotAValue = true;
-            }
-            else
-            {
-                System.out.println("\nInvalid input: " + value);
-            }
-
-        }while(!gotAValue);
-
-        return value;
-    }
-    public static int getRangedInt(Scanner in, String prompt, int low, int high)
-    {
-        int intVal = 0;
-        boolean validInput = false;
-        do{
-            System.out.print(prompt + "[ " + low + " - " + high + " ]: ");
-            if(in.hasNextDouble())
-            {
-                intVal = in.nextInt();
-                in.nextLine();
-                if(intVal >= low && intVal <= high)
+            double doubleVal = 0;
+            boolean validInput = false;
+            do{
+                System.out.print(prompt + "[ " + low + " - " + high + " ]: ");
+                if(in.hasNextDouble())
                 {
-                    validInput = true;
-                } else {
-                    System.out.println("This number is out of the range, [ " + low + " - " + high + " ], you entered: " + intVal);
+                    doubleVal = in.nextDouble();
+                    in.nextLine();
+                    if(doubleVal >= low && doubleVal <= high)
+                    {
+                        validInput = true;
+                    } else {
+                        System.out.println("This number is out of the range, [ " + low + " - " + high + " ], you entered: " + doubleVal);
+                    }
                 }
-            }
-        }while(!validInput);
-        return intVal;
-   }
+            }while(!validInput);
+            return doubleVal;
+
+        }
+
+        public static boolean getYN(Scanner in, String prompt)
+        {
+            String respondYN = "";
+            boolean returnVal = false;
+            boolean validInput = false;
+
+            do {
+                System.out.println(prompt + ": ");
+                respondYN = in.nextLine();
+
+                if(respondYN.equalsIgnoreCase("Y"))
+                {
+                    returnVal = true;
+                    validInput = true;
+                }
+                else if(respondYN.equalsIgnoreCase("N"))
+                {
+                    returnVal = false;
+                    validInput = true;
+                }else {
+                    System.out.println("You must enter Y/N. ");
+                }
+
+            }while(!validInput);
+            return returnVal;
+        }
+
+
+        public static String getRegExString(Scanner pipe, String prompt, String regExPattern)
+        {
+            String value = "";
+            boolean gotAValue = false;
+
+            do
+            {
+                // show the prompt
+                System.out.print(prompt + ": ");
+                // input the data
+                value = pipe.nextLine();
+                // test to see if it is correct
+                if(value.matches(regExPattern))
+                {
+                    // We have a match this String passes!
+                    gotAValue = true;
+                }
+                else
+                {
+                    System.out.println("\nInvalid input: " + value);
+                }
+
+            }while(!gotAValue);
+
+            return value;
+        }
+        public static int getRangedInt(Scanner in, String prompt, int low, int high)
+        {
+            int intVal = 0;
+            boolean validInput = false;
+            do{
+                System.out.print(prompt + "[ " + low + " - " + high + " ]: ");
+                if(in.hasNextDouble())
+                {
+                    intVal = in.nextInt();
+                    in.nextLine();
+                    if(intVal >= low && intVal <= high)
+                    {
+                        validInput = true;
+                    } else {
+                        System.out.println("This number is out of the range, [ " + low + " - " + high + " ], you entered: " + intVal);
+                    }
+                }
+            }while(!validInput);
+            return intVal;
+       }
+    */
+    public static String PrettyHeader(String msg) {
+        String header = "";
+
+        for (int f = 0; f < 60; f++) {
+            System.out.print("*");
+        }
+        System.out.println();
+
+        for (int f = 0; f < 12; f++) {
+            System.out.print(" ");
+        }
+
+        System.out.println(msg);
+
+        for (int f = 0; f < (28 - msg.length()); f++) {
+            System.out.print("");
+        }
+
+        for (int f = 0; f < 60; f++) {
+            System.out.print("*");
+        }
+        System.out.println();
+
+        return header;
+    }
+
 }

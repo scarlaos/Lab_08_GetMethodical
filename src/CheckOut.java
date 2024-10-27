@@ -11,9 +11,9 @@ public class CheckOut
 
         while(!done)
         {
-            double price = DevTest.getRangedDouble(in, "Enter the price of your item",0.50,10.00);
+            double price = SafeInput.getRangedDouble(in, "Enter the price of your item",0.50,10.00);
             total += price;
-            boolean repeat = DevTest.getYN(in,"Would you like to continue?");
+            boolean repeat = SafeInput.getYN(in,"Would you like to continue?");
 
             if(repeat == false)
             {
