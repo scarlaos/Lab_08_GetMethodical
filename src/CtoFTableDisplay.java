@@ -7,6 +7,15 @@ public class CtoFTableDisplay {
         double tempF = 0.00;
         tempF = CtoFDouble(in, "Enter a temperature is C");
         System.out.println("Your conversion from C to F is: " + tempF + " degrees");
+        in.close();
+
+        System.out.printf("%-10s %-10s%n", "Celsius", "Fahrenheit");
+        System.out.println("-----------------------------------------------");
+        for (double celsius = -100; celsius <= 100; celsius++) {
+            double fahrenheit = celsius * 9.0 / 5.0 + 32;
+            System.out.printf("%-10.1f %-10.2f%n", celsius, fahrenheit);
+        }
+
     }
 
     public static double CtoFDouble(Scanner pipe, String prompt) {
